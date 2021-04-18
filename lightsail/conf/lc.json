@@ -1,0 +1,37 @@
+{
+    "serviceName": "${TODO:service_name}",
+    "containers": 
+    {
+        "db": {
+            "image": ":${TODO:service_name}.wordpress-demo-education-db.2",
+            "command": [],
+            "environment": {
+            },
+            "ports": {
+                "3306": "TCP"
+            }
+        },
+        "wordpress": {
+            "image": ":${TODO:service_name}.wordpress-demo-education-wordpress.1",
+            "command": [],
+            "environment": {
+                "WORDPRESS_DB_HOST": "${TODO:service_name}.service.local:3306"
+            },
+            "ports": {
+                "80": "HTTP"
+            }
+        }
+    },
+    "publicEndpoint": {
+        "containerName": "wordpress",
+        "containerPort": 80,
+        "healthCheck": {
+            "healthyThreshold": 2,
+            "unhealthyThreshold": 2,
+            "timeoutSeconds": 2,
+            "intervalSeconds": 60,
+            "path": "/",
+            "successCodes": "200-499"
+        }
+    }
+}

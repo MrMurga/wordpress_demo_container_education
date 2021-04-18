@@ -1,0 +1,12 @@
+version: '2'
+services:
+  db:
+    image: 'wordpressdemo_education-db:latest'
+    restart: 'always'
+  wordpress:
+    image: 'wordpressdemo_education-wordpress:latest'
+    restart: 'always'
+    environment: 
+      - WORDPRESS_DB_HOST=db
+    ports: 
+      - '80:80'
