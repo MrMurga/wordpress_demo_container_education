@@ -1,0 +1,2 @@
+# wordpress_demo_container_education
+Fully Implemented Wordpress Demo Containers with Lightsail configuration
