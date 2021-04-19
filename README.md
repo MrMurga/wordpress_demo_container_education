@@ -37,9 +37,10 @@ WORDPRESS_DB_USER=olakaiconsulting
 ```
 
 # Build images
+From the `docker` directory:
 ```
-docker image build . -f docker/images/wordpress/Dockerfile -t wordpress-demo-education-wordpress:latest
-docker image build . -f docker/images/db/Dockerfile -t wordpress-demo-education-db:latest
+docker image build . -f images/wordpress/Dockerfile -t wordpress-demo-education-wordpress:latest
+docker image build . -f images/db/Dockerfile -t wordpress-demo-education-db:latest
 ```
 
 # Launching docker
